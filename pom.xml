@@ -125,6 +125,37 @@
                 <!--
                 ...Additional dependencies may be placed here...
                 -->
+
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-jdbc</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-jdbc-drivers</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+                <!--<dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>5.1.36</version>
+                </dependency>-->
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>8.0.11</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-webapp${app.server}</artifactId>
+                    <version>${cas.version}</version>
+                    <type>war</type>
+                    <scope>runtime</scope>
+                </dependency>
+
+
             </dependencies>
         </profile>
 

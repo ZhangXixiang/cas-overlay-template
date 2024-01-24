@@ -1,3 +1,48 @@
+
+```Mac环境注意点：
+参考链接：https://blog.csdn.net/qq_34021712/article/details/80871015
+
+1、确定java版本，删除不需要的版本；
+查找当前已安装的Java版本
+//输入：
+ls /Library/Java/JavaVirtualMachines/
+//输出：
+jdk1.8.0_211.jdk jdk-11.0.1.jdk
+选择想要卸载的版本，进行卸载
+sudo rm -rf /Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk
+
+2、确定maven打包运行使用的java版本是1.8，mvn-version
+
+3、证书相关
+####生成keystore
+keytool -genkey -alias tomcat -keyalg RSA -validity 3650 -keystore /Users/mac/Desktop/tomcat.keystore
+
+#输入第一步中keystore的密码changeit
+keytool -export -alias tomcat -file /Users/mac/Desktop/tomcat.cer -keystore /Users/mac/Desktop/tomcat.keystore -validity 3650
+
+####查看指定目录的证书
+keytool -list -keystore /Users/mac/Desktop/tomcat.keystore 
+####删除已有的证书
+sudo keytool -delete -alias tomcat -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/security/cacerts
+
+#授权文件到jdk
+sudo keytool -import -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/security/cacerts -file /Users/mac/Desktop/tomcat.cer -alias tomcat -storepass changeit
+
+#配置到tomcat的8443端口，进行证书绑定
+<Connector
+           protocol="org.apache.coyote.http11.Http11NioProtocol"
+           port="8443" maxThreads="200"
+           scheme="https" secure="true" SSLEnabled="true"
+           keystoreFile="E:\projects\learn\cas\tomcat.keystore" keystorePass="123456"
+           clientAuth="false" sslProtocol="TLS"/>
+
+4、默认账号：casuser 默认密码：Mellon 仅有这一个用户
+
+```
+
+
+
+
 CAS Overlay Template
 ============================
 
