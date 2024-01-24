@@ -1,0 +1,10 @@
+{
+  "@class" : "org.jasig.cas.support.oauth.services.OAuthRegisteredService",
+  "clientId": "key",
+  "clientSecret": "secret",
+  "bypassApprovalPrompt": false,
+  "serviceId" : "^http://www.baidu.com",
+  "generateRefreshToken" : true,
+  "name" : "keyName",
+  "id" : 100004
+}

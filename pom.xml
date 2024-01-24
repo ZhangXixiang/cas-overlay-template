@@ -155,6 +155,19 @@
                     <scope>runtime</scope>
                 </dependency>
 
+                <!--oauth2-->
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-oauth-webflow</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-reports</artifactId>
+                    <version>${cas.version}</version>
+                </dependency>
+
 
             </dependencies>
         </profile>
