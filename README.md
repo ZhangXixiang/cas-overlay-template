@@ -2,6 +2,17 @@
 Apereo CAS WAR Overlay Template
 =====================================
 
+https://server.cas.com:8443/cas/oauth2.0/authorize?response_type=code&client_id=1000&clientSecret=1000&redirect_uri=https://www.baidu.com
+
+https://www.baidu.com/?code=OC-3-vMa9C1ZHHcRXESBqqUZ3NRE4DcyaOkc1
+
+
+
+
+
+
+
+
 WAR Overlay Type: `cas-overlay`
 
 # Versions

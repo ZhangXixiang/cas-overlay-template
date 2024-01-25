@@ -127,6 +127,10 @@ dependencies {
     implementation "org.apereo.cas:cas-server-core-api-configuration-model"
     implementation "org.apereo.cas:cas-server-webapp-init"
 
+    implementation "org.apereo.cas:cas-server-support-oauth-webflow"
+    implementation "org.apereo.cas:cas-server-support-reports"
+
+
     if (project.hasProperty("casModules")) {
         def dependencies = project.getProperty("casModules").split(",")
         dependencies.each {
